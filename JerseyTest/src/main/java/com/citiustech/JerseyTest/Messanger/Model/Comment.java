@@ -1,32 +1,25 @@
 package com.citiustech.JerseyTest.Messanger.Model;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
-
-@XmlRootElement
-public class Message {
+public class Comment {
 
 	private long id;
 	private String message;
 	private Date created;
 	private String author;
-	private Map<Long, Comment> comments = new HashMap<>();
 	
-	public Message(){
+	
+	public Comment() {
 		
 	}
-	public Message(long id, String message, String author){
+	
+	public Comment(long id, String message, String author) {
 		this.id = id;
 		this.message = message;
-		this.author = author;
+		this.author= author;
 		this.created = new Date();
-		
 	}
-	
 	public long getId() {
 		return id;
 	}
@@ -52,14 +45,5 @@ public class Message {
 		this.author = author;
 	}
 	
-	@XmlTransient
 	
-	
-	public void setComments(Map<Long, Comment> comments) {
-		this.comments = comments;
-	}
-	public Map<Long, Comment> getComments() {
-		return comments;
-	}
-
 }
